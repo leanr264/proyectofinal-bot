@@ -7,6 +7,7 @@ from groq import Groq
 from typing import Optional
 import time
 from dotenv import load_dotenv
+from telegram_bot import TelegramBot
 
 
 # cargar las variables de entorno
@@ -23,3 +24,13 @@ if not GROQ_API_KEY:
 # instanciar objetos de clases
 bot = tlb.TeleBot(TELEGRAM_TOKEN)
 groq_client = Groq(api_key=GROQ_API_KEY)
+
+
+if __name__ == "__main__":
+    try:
+        # Instanciamos un objeto de la clase TelegramBot
+        bot_instance = TelegramBot(bot)
+        # Llamamos al metodo start(), que inicia el polling infinito para recibir mensajes de Telegram
+        bot_instance.start()
+    except Exception as e:
+        print(f"Error fatal al iniciar el bot: {e}")
