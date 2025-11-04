@@ -9,5 +9,5 @@ class TelegramBot:
         print("Bot de Telegram IA (POO) iniciado. Esperando mensajes...")
         self._bot.infinity_polling()
 
-    def sendResponse(self, chat_id, response):
-        self.bot.send_message(chat_id, response)
+    def sendResponse(self, response):
+        self.bot.send_message(response)
