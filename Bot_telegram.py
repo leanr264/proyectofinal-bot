@@ -1,13 +1,13 @@
 import telebot
 import os 
 # Importamos la clase (que ahora también sabe de Telegram)
-from Manejador import ManejadorDeTexto
+from ManejadorDeTexto import ManejadorDeTexto
 
 # --- 1. CONFIGURACIÓN ---
-TELEGRAM_TOKEN = "TU_TOKEN_DE_TELEGRAM"
-GROQ_API_KEY = "TU_API_KEY_DE_GROQ"
+TELEGRAM_TOKEN = "8283999104:AAFI9X43-Giqi7Bf9-i4HgKMRktdTu5eSek"
+GROQ_API_KEY = "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"
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-PATH_DATASET = "dataset.json"
+PATH_DATASET = "datainformática.json"
 
 # --- 2. INICIALIZACIÓN ---
 

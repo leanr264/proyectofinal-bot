@@ -1,0 +1,1038 @@
+{
+  "categoria": "Informática básica",
+  "cantidad": 250,
+  "dataset": [
+    {
+      "id": 1,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene el AMD Ryzen 7 5700X?",
+      "respuesta": "Procesador: AMD Ryzen 7 5700X\nArquitectura: Zen 3 - 7nm\nNúcleos/Hilos: 8 / 16\nFrecuencia base / Boost: 3.4 GHz / 4.6 GHz\nTDP: 65W\nSocket: AM4\nUso recomendado: gaming, multitarea, creación de contenido"
+    },
+    {
+      "id": 2,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene el Intel Core i9-12900K?",
+      "respuesta": "Procesador: Intel Core i9-12900K\nArquitectura: Alder Lake - 10nm\nNúcleos/Hilos: 16 / 24\nFrecuencia base / Boost: 3.2 GHz / 5.2 GHz\nTDP: 125W\nSocket: LGA1700\nUso recomendado: gaming extremo, edición de video, estaciones de trabajo"
+    },
+    {
+      "id": 3,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene la NVIDIA GeForce RTX 3080?",
+      "respuesta": "Procesador: NVIDIA GeForce RTX 3080\nArquitectura: Ampere\nNúcleos/Hilos: 8704 CUDA cores\nFrecuencia base / Boost: 1710 MHz boost\nTDP: 320W\nSocket: PCIe 4.0\nUso recomendado: gaming 4K, renderizado, IA ligera"
+    },
+    {
+      "id": 4,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene un SSD NVMe PCIe 4.0 1TB?",
+      "respuesta": "Procesador: SSD NVMe PCIe 4.0 1TB\nArquitectura: NVMe PCIe 4.0\nNúcleos/Hilos: —\nFrecuencia base / Boost: Lect: hasta 7000 MB/s, Escr: hasta 5000 MB/s\nTDP: 5W aprox\nSocket: M.2\nUso recomendado: SO, juegos, edición de video"
+    },
+    {
+      "id": 5,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene un HDD 2TB 7200 RPM?",
+      "respuesta": "Procesador: HDD 2TB 7200 RPM\nArquitectura: SATA HDD\nNúcleos/Hilos: —\nFrecuencia base / Boost: Velocidad media de transferencia ~150 MB/s\nTDP: 6-9W\nSocket: SATA\nUso recomendado: almacenamiento masivo y backups"
+    },
+    {
+      "id": 6,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene una memoria RAM DDR4 16GB 3200MHz?",
+      "respuesta": "Procesador: Memoria RAM DDR4 16GB 3200MHz\nArquitectura: DDR4\nNúcleos/Hilos: —\nFrecuencia base / Boost: 3200 MT/s\nTDP: 1.2-1.35V\nSocket: DIMM\nUso recomendado: multitarea, gaming"
+    },
+    {
+      "id": 7,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene una placa madre ATX con chipset B550?",
+      "respuesta": "Procesador: Placa madre ATX con chipset B550\nArquitectura: AM4 B550\nNúcleos/Hilos: —\nFrecuencia base / Boost: Soporta PCIe 4.0 en ranuras principales\nTDP: —\nSocket: ATX\nUso recomendado: plataformas AMD modernas"
+    },
+    {
+      "id": 8,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene una fuente PSU 650W 80+ Bronze?",
+      "respuesta": "Procesador: Fuente PSU 650W 80+ Bronze\nArquitectura: —\nNúcleos/Hilos: —\nFrecuencia base / Boost: Capacidad 650W, eficiencia 80+ Bronze\nTDP: —\nSocket: ATX\nUso recomendado: PC de gama media"
+    },
+    {
+      "id": 9,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene la GPU integrada Intel UHD?",
+      "respuesta": "Procesador: GPU integrada Intel UHD\nArquitectura: Xe Graphics\nNúcleos/Hilos: —\nFrecuencia base / Boost: frecuencias variables\nTDP: varía\nSocket: integrada\nUso recomendado: uso básico, reproducción multimedia"
+    },
+    {
+      "id": 10,
+      "tipo": "hardware",
+      "pregunta": "¿Qué características tiene la Raspberry Pi 4 Model B?",
+      "respuesta": "Procesador: Raspberry Pi 4 Model B\nArquitectura: ARM Cortex-A72\nNúcleos/Hilos: 4 / —\nFrecuencia base / Boost: 1.5 GHz\nTDP: ~7W\nSocket: GPIO\nUso recomendado: proyectos educativos, IoT"
+    },
+    {
+      "id": 11,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es la informática?",
+      "respuesta": "Es la ciencia que estudia el tratamiento automático de la información mediante computadoras y sistemas digitales."
+    },
+    {
+      "id": 12,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es una computadora?",
+      "respuesta": "Es una máquina electrónica que recibe, procesa y almacena datos para producir información útil."
+    },
+    {
+      "id": 13,
+      "tipo": "concepto",
+      "pregunta": "¿Cuáles son las partes principales de una computadora?",
+      "respuesta": "Hardware (componentes físicos) y software (programas y sistemas que hacen funcionar el hardware)."
+    },
+    {
+      "id": 14,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es el hardware?",
+      "respuesta": "Es la parte física de la computadora: monitor, teclado, disco duro, memoria RAM, procesador, etc."
+    },
+    {
+      "id": 15,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es el software?",
+      "respuesta": "Son los programas y aplicaciones que permiten ejecutar tareas específicas en una computadora."
+    },
+    {
+      "id": 16,
+      "tipo": "concepto",
+      "pregunta": "¿Qué diferencia hay entre hardware y software?",
+      "respuesta": "El hardware es tangible (se puede tocar) y el software es intangible (programas e instrucciones)."
+    },
+    {
+      "id": 17,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es la memoria RAM?",
+      "respuesta": "Es la memoria principal de la computadora que almacena temporalmente los datos y programas que se están usando."
+    },
+    {
+      "id": 18,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un procesador o CPU?",
+      "respuesta": "Es la unidad central de procesamiento, el cerebro de la computadora encargado de ejecutar instrucciones."
+    },
+    {
+      "id": 19,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un sistema operativo?",
+      "respuesta": "Es el software que gestiona el hardware y los recursos de la computadora, permitiendo la ejecución de programas."
+    },
+    {
+      "id": 20,
+      "tipo": "concepto",
+      "pregunta": "Ejemplos de sistemas operativos.",
+      "respuesta": "Windows, Linux, macOS, Android e iOS son ejemplos de sistemas operativos."
+    },
+    {
+      "id": 21,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un archivo?",
+      "respuesta": "Es una unidad de información almacenada en un dispositivo que puede contener texto, imágenes, audio, video o datos."
+    },
+    {
+      "id": 22,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es una carpeta o directorio?",
+      "respuesta": "Es un contenedor lógico que permite organizar archivos dentro de un sistema operativo."
+    },
+    {
+      "id": 23,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es Internet?",
+      "respuesta": "Es una red global de computadoras interconectadas que permite compartir información y servicios."
+    },
+    {
+      "id": 24,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es una dirección IP?",
+      "respuesta": "Es un número que identifica de manera única a un dispositivo conectado a una red."
+    },
+    {
+      "id": 25,
+      "tipo": "concepto",
+      "pregunta": "¿Qué diferencia hay entre IP pública y privada?",
+      "respuesta": "La IP pública identifica tu red en Internet, la IP privada identifica dispositivos dentro de tu red local."
+    },
+    {
+      "id": 26,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un servidor?",
+      "respuesta": "Es una computadora que proporciona servicios, recursos o datos a otras computadoras llamadas clientes."
+    },
+    {
+      "id": 27,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un navegador web?",
+      "respuesta": "Es un programa que permite acceder, visualizar e interactuar con páginas web. Ejemplo: Chrome, Firefox, Edge, Safari."
+    },
+    {
+      "id": 28,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es una red informática?",
+      "respuesta": "Es un conjunto de dispositivos interconectados que comparten información y recursos."
+    },
+    {
+      "id": 29,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es una LAN?",
+      "respuesta": "Significa Red de Área Local; conecta computadoras dentro de un mismo edificio o zona pequeña."
+    },
+    {
+      "id": 30,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es una WAN?",
+      "respuesta": "Significa Red de Área Amplia; conecta redes locales a grandes distancias, como Internet."
+    },
+    {
+      "id": 31,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un router?",
+      "respuesta": "Es un dispositivo que conecta diferentes redes y dirige el tráfico de datos entre ellas."
+    },
+    {
+      "id": 32,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es el almacenamiento en la nube?",
+      "respuesta": "Es un servicio que permite guardar datos en servidores remotos accesibles por Internet."
+    },
+    {
+      "id": 33,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un virus informático?",
+      "respuesta": "Es un programa malicioso diseñado para alterar el funcionamiento normal de una computadora."
+    },
+    {
+      "id": 34,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un antivirus?",
+      "respuesta": "Es un software que detecta, bloquea y elimina programas maliciosos de un sistema informático."
+    },
+    {
+      "id": 35,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un firewall?",
+      "respuesta": "Es un sistema de seguridad que controla el tráfico de red entrante y saliente para evitar accesos no autorizados."
+    },
+    {
+      "id": 36,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es el phishing?",
+      "respuesta": "Es una técnica de fraude donde se engaña al usuario para obtener información personal, como contraseñas o datos bancarios."
+    },
+    {
+      "id": 37,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es una contraseña segura?",
+      "respuesta": "Es una clave que combina letras, números y símbolos, con más de 8 caracteres, para proteger el acceso a cuentas y sistemas."
+    },
+    {
+      "id": 38,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un lenguaje de programación?",
+      "respuesta": "Es un conjunto de reglas y símbolos que permiten a los programadores crear software e indicarle a la computadora qué hacer."
+    },
+    {
+      "id": 39,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un algoritmo?",
+      "respuesta": "Es un conjunto ordenado de pasos que permiten resolver un problema o realizar una tarea específica."
+    },
+    {
+      "id": 40,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es la programación orientada a objetos?",
+      "respuesta": "Es un paradigma de programación que organiza el código en clases y objetos que representan entidades del mundo real."
+    },
+    {
+      "id": 41,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es un sistema binario?",
+      "respuesta": "Es un sistema numérico que utiliza solo dos dígitos: 0 y 1, base del funcionamiento de las computadoras."
+    },
+    {
+      "id": 42,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es una base de datos?",
+      "respuesta": "Es un conjunto organizado de información estructurada que se almacena electrónicamente y puede ser consultada o modificada."
+    },
+    {
+      "id": 43,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es SQL?",
+      "respuesta": "Significa Structured Query Language; es un lenguaje usado para gestionar y consultar bases de datos relacionales."
+    },
+    {
+      "id": 44,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es la inteligencia artificial?",
+      "respuesta": "Es la rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana."
+    },
+    {
+      "id": 45,
+      "tipo": "concepto",
+      "pregunta": "¿Qué es el aprendizaje automático?",
+      "respuesta": "Es una subárea de la inteligencia artificial que permite que los sistemas aprendan de los datos sin ser programados explícitamente."
+    },
+    {
+      "id": 46,
+      "tipo": "redes",
+      "pregunta": "¿Qué es DNS?",
+      "respuesta": "Domain Name System; traduce nombres de dominio a direcciones IP para que los navegadores localicen servidores en Internet."
+    },
+    {
+      "id": 47,
+      "tipo": "redes",
+      "pregunta": "¿Qué es DHCP?",
+      "respuesta": "Protocolo que asigna dinámicamente direcciones IP a dispositivos en una red local."
+    },
+    {
+      "id": 48,
+      "tipo": "redes",
+      "pregunta": "¿Qué es una VPN?",
+      "respuesta": "Red privada virtual que crea un túnel cifrado para conectar redes o usuarios de forma segura sobre Internet."
+    },
+    {
+      "id": 49,
+      "tipo": "redes",
+      "pregunta": "¿Qué es IPv6 y por qué importa?",
+      "respuesta": "IPv6 es la versión moderna del protocolo IP con direcciones más largas para resolver la escasez de IPv4."
+    },
+    {
+      "id": 50,
+      "tipo": "redes",
+      "pregunta": "¿Qué es NAT?",
+      "respuesta": "Network Address Translation; permite que múltiples dispositivos con IP privada compartan una IP pública."
+    },
+    {
+      "id": 51,
+      "tipo": "redes",
+      "pregunta": "¿Qué es el modelo OSI?",
+      "respuesta": "Un marco conceptual de 7 capas que explica funciones de redes: física, enlace, red, transporte, sesión, presentación y aplicación."
+    },
+    {
+      "id": 52,
+      "tipo": "redes",
+      "pregunta": "¿Qué diferencia hay entre TCP y UDP?",
+      "respuesta": "TCP es orientado a conexión y garantiza entrega; UDP es sin conexión y prioritiza velocidad y baja latencia."
+    },
+    {
+      "id": 53,
+      "tipo": "redes",
+      "pregunta": "¿Qué es una máscara de subred?",
+      "respuesta": "Indica qué parte de la dirección IP corresponde a la red y cuál al host dentro de esa red."
+    },
+    {
+      "id": 54,
+      "tipo": "redes",
+      "pregunta": "¿Qué es un switch?",
+      "respuesta": "Dispositivo de red que conecta múltiples dispositivos dentro de una LAN y dirige tramas entre puertos."
+    },
+    {
+      "id": 55,
+      "tipo": "redes",
+      "pregunta": "¿Qué es fibra óptica?",
+      "respuesta": "Medio de transmisión que usa luz en fibras de vidrio, ofreciendo alta velocidad y baja latencia en enlaces de red."
+    },
+    {
+      "id": 56,
+      "tipo": "redes",
+      "pregunta": "¿Cómo se configura un router doméstico básico?",
+      "respuesta": "Accediendo a su interfaz web, ajustando SSID, contraseña Wi-Fi, tipo de seguridad y parámetros de DHCP y NAT."
+    },
+    {
+      "id": 57,
+      "tipo": "redes",
+      "pregunta": "¿Qué es QoS en redes?",
+      "respuesta": "Quality of Service; prioriza ciertos tipos de tráfico para garantizar rendimiento en aplicaciones críticas como VoIP."
+    },
+    {
+      "id": 58,
+      "tipo": "redes",
+      "pregunta": "¿Qué es un punto de acceso (AP)?",
+      "respuesta": "Dispositivo que provee conectividad Wi-Fi en una red cableada, permitiendo conexiones inalámbricas."
+    },
+    {
+      "id": 59,
+      "tipo": "redes",
+      "pregunta": "¿Qué es 5G?",
+      "respuesta": "Quinta generación de redes móviles que ofrece mayor velocidad, menor latencia y más densidad de dispositivos conectados."
+    },
+    {
+      "id": 60,
+      "tipo": "redes",
+      "pregunta": "¿Qué es un VLAN?",
+      "respuesta": "Virtual LAN; segmenta una red física en múltiples redes lógicas para mejorar seguridad y gestión."
+    },
+    {
+      "id": 61,
+      "tipo": "redes",
+      "pregunta": "¿Qué es el ping y qué mide?",
+      "respuesta": "Herramienta que envía paquetes ICMP para medir tiempo de ida y vuelta (latencia) a un host en la red."
+    },
+    {
+      "id": 62,
+      "tipo": "redes",
+      "pregunta": "¿Qué es traceroute?",
+      "respuesta": "Herramienta que muestra la ruta y tiempos de salto entre tu equipo y un servidor en Internet."
+    },
+    {
+      "id": 63,
+      "tipo": "redes",
+      "pregunta": "¿Qué es un gateway predeterminado?",
+      "respuesta": "El router que conecta una red local con otras redes, usado por defecto para salir de la subred."
+    },
+    {
+      "id": 64,
+      "tipo": "redes",
+      "pregunta": "¿Qué es SSL/TLS?",
+      "respuesta": "Protocolos de cifrado que protegen la comunicación en Internet, usados en HTTPS para conexiones seguras."
+    },
+    {
+      "id": 65,
+      "tipo": "redes",
+      "pregunta": "¿Qué es un proxy?",
+      "respuesta": "Intermediario que recibe peticiones de clientes y actúa en su nombre hacia servidores, usado para caching o control de acceso."
+    },
+    {
+      "id": 66,
+      "tipo": "redes",
+      "pregunta": "¿Cómo funciona el Wi-Fi mesh?",
+      "respuesta": "Una topología donde múltiples nodos se conectan entre sí para ampliar cobertura y mantener roaming suave."
+    },
+    {
+      "id": 67,
+      "tipo": "redes",
+      "pregunta": "¿Qué es el ancho de banda?",
+      "respuesta": "Capacidad máxima de transmisión en un canal de comunicación, normalmente medida en Mbps o Gbps."
+    },
+    {
+      "id": 68,
+      "tipo": "redes",
+      "pregunta": "¿Qué es latencia y por qué importa?",
+      "respuesta": "Tiempo que tardan los datos en viajar de origen a destino; impacta juegos en línea, llamadas y respuesta en apps."
+    },
+    {
+      "id": 69,
+      "tipo": "redes",
+      "pregunta": "¿Cómo asegurar una red Wi-Fi doméstica?",
+      "respuesta": "Usar WPA3/WPA2, cambiar contraseñas por defecto, desactivar WPS y mantener firmware actualizado."
+    },
+    {
+      "id": 70,
+      "tipo": "redes",
+      "pregunta": "¿Qué es el direccionamiento estático y cuándo usarlo?",
+      "respuesta": "Asignar IP fija a un dispositivo; útil para servidores, impresoras de red o dispositivos que requieren acceso constante."
+    },
+    {
+      "id": 71,
+      "tipo": "redes",
+      "pregunta": "¿Qué es un IDS/IPS en redes?",
+      "respuesta": "Sistema de detección/preventivo de intrusos que identifica y bloquea tráfico malicioso en la red."
+    },
+    {
+      "id": 72,
+      "tipo": "redes",
+      "pregunta": "¿Qué es BGP y para qué se usa?",
+      "respuesta": "Border Gateway Protocol; protocolo de enrutamiento usado entre sistemas autónomos para dirigir tráfico en Internet."
+    },
+    {
+      "id": 73,
+      "tipo": "redes",
+      "pregunta": "¿Qué es el jitter?",
+      "respuesta": "Variación en la latencia de los paquetes; afecta la calidad de voz y video en tiempo real."
+    },
+    {
+      "id": 74,
+      "tipo": "redes",
+      "pregunta": "¿Qué es una dirección MAC?",
+      "respuesta": "Identificador único asignado a interfaces de red por el fabricante, usado en la capa de enlace."
+    },
+    {
+      "id": 75,
+      "tipo": "software",
+      "pregunta": "¿Qué es un driver y para qué sirve?",
+      "respuesta": "Software que permite que el sistema operativo se comunique con el hardware."
+    },
+    {
+      "id": 76,
+      "tipo": "software",
+      "pregunta": "¿Qué es una actualización de software?",
+      "respuesta": "Proceso de instalar versiones nuevas o mejoradas de programas para corregir errores o añadir funciones."
+    },
+    {
+      "id": 77,
+      "tipo": "software",
+      "pregunta": "¿Qué es una instalación limpia?",
+      "respuesta": "Instalar el sistema operativo desde cero, borrando configuraciones previas y eliminando posibles problemas heredados."
+    },
+    {
+      "id": 78,
+      "tipo": "software",
+      "pregunta": "¿Qué es portable en software?",
+      "respuesta": "Programas que no requieren instalación y pueden ejecutarse desde una carpeta o unidad externa."
+    },
+    {
+      "id": 79,
+      "tipo": "software",
+      "pregunta": "¿Qué es una licencia de software?",
+      "respuesta": "Contrato legal que define cómo se puede usar, copiar o distribuir un programa."
+    },
+    {
+      "id": 80,
+      "tipo": "software",
+      "pregunta": "¿Qué es un gestor de paquetes?",
+      "respuesta": "Herramienta que automatiza la instalación, actualización y eliminación de software (ej. apt, yum, pip)."
+    },
+    {
+      "id": 81,
+      "tipo": "software",
+      "pregunta": "¿Qué es rollback en software?",
+      "respuesta": "Volver a una versión anterior de un software si la nueva causa problemas."
+    },
+    {
+      "id": 82,
+      "tipo": "software",
+      "pregunta": "¿Qué es sandboxing?",
+      "respuesta": "Ejecución aislada de un programa para limitar su acceso al sistema y mejorar seguridad."
+    },
+    {
+      "id": 83,
+      "tipo": "software",
+      "pregunta": "¿Qué es un binario ejecutable?",
+      "respuesta": "Archivo compilado que puede ser ejecutado por el sistema operativo."
+    },
+    {
+      "id": 84,
+      "tipo": "software",
+      "pregunta": "¿Qué es la compatibilidad hacia atrás?",
+      "respuesta": "Capacidad de nuevas versiones de software para ejecutar archivos o soportar funcionalidades antiguas."
+    },
+    {
+      "id": 85,
+      "tipo": "software",
+      "pregunta": "¿Qué es un instalador (installer)?",
+      "respuesta": "Programa que automatiza la copia de archivos, creación de entradas de registro y configuración para usar un software."
+    },
+    {
+      "id": 86,
+      "tipo": "software",
+      "pregunta": "¿Qué es una build en desarrollo?",
+      "respuesta": "Versión compilada del software lista para pruebas o despliegue."
+    },
+    {
+      "id": 87,
+      "tipo": "software",
+      "pregunta": "¿Qué es continuous integration (CI)?",
+      "respuesta": "Práctica de integrar cambios frecuentemente con pruebas automáticas para detectar errores temprano."
+    },
+    {
+      "id": 88,
+      "tipo": "software",
+      "pregunta": "¿Qué es continuous deployment (CD)?",
+      "respuesta": "Extensión de CI que automatiza el despliegue de cambios a entornos de producción tras pasar pruebas."
+    },
+    {
+      "id": 89,
+      "tipo": "software",
+      "pregunta": "¿Qué es una librería (library)?",
+      "respuesta": "Colección de funciones reutilizables que los desarrolladores pueden incluir en sus programas."
+    },
+    {
+      "id": 90,
+      "tipo": "software",
+      "pregunta": "¿Qué es la obsolescencia programada en software?",
+      "respuesta": "Cuando un producto se diseña para tener una vida útil limitada, forzando actualizaciones o reemplazos."
+    },
+    {
+      "id": 91,
+      "tipo": "software",
+      "pregunta": "¿Qué es el modo seguro (safe mode)?",
+      "respuesta": "Arranque del sistema operativo con servicios y controladores mínimos para diagnosticar problemas."
+    },
+    {
+      "id": 92,
+      "tipo": "software",
+      "pregunta": "¿Qué es una dependencia en software?",
+      "respuesta": "Biblioteca o componente necesario para que otra aplicación funcione correctamente."
+    },
+    {
+      "id": 93,
+      "tipo": "software",
+      "pregunta": "¿Qué es el versionado semántico (semver)?",
+      "respuesta": "Convención de numeración de versiones: MAJOR.MINOR.PATCH que indica compatibilidad y cambios."
+    },
+    {
+      "id": 94,
+      "tipo": "software",
+      "pregunta": "¿Qué es un Hotfix?",
+      "respuesta": "Actualización rápida para corregir un error crítico en producción."
+    },
+    {
+      "id": 95,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es malware?",
+      "respuesta": "Software diseñado para dañar, explotar o alterar sistemas sin el consentimiento del propietario."
+    },
+    {
+      "id": 96,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es ransomware?",
+      "respuesta": "Malware que cifra archivos y exige un rescate para restaurar el acceso."
+    },
+    {
+      "id": 97,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es phishing y cómo evitarlo?",
+      "respuesta": "Técnica de engaño para obtener credenciales; evitar verificando remitentes, no abrir enlaces sospechosos y usar 2FA."
+    },
+    {
+      "id": 98,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es 2FA?",
+      "respuesta": "Autenticación de dos factores; añade una capa extra de seguridad combinando algo que sabes (contraseña) y algo que tienes (código)."
+    },
+    {
+      "id": 99,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es autenticación biométrica?",
+      "respuesta": "Uso de rasgos físicos (huella, rostro) para verificar identidad; conveniente pero con consideraciones de privacidad."
+    },
+    {
+      "id": 100,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es un certificado digital?",
+      "respuesta": "Documento electrónico que vincula claves criptográficas con la identidad de una entidad para comunicaciones seguras."
+    },
+    {
+      "id": 101,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es cifrado simétrico y asimétrico?",
+      "respuesta": "Simétrico usa la misma clave para cifrar/descifrar; asimétrico usa par de claves pública/privada."
+    },
+    {
+      "id": 102,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es hashing?",
+      "respuesta": "Transformación unidireccional de datos a una cadena fija; útil para integridad y almacenamiento de contraseñas."
+    },
+    {
+      "id": 103,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es un ataque de fuerza bruta?",
+      "respuesta": "Intentar muchas combinaciones de credenciales hasta encontrar la correcta."
+    },
+    {
+      "id": 104,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es spoofing?",
+      "respuesta": "Suplantación de identidad en la red o en correos para engañar a sistemas o usuarios."
+    },
+    {
+      "id": 105,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es un exploit?",
+      "respuesta": "Código que aprovecha una vulnerabilidad para ejecutar acciones no autorizadas."
+    },
+    {
+      "id": 106,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es hardening de sistemas?",
+      "respuesta": "Reducir la superficie de ataque aplicando configuraciones seguras, eliminando servicios innecesarios y parchando."
+    },
+    {
+      "id": 107,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es un pentest?",
+      "respuesta": "Prueba de penetración; evaluación controlada para encontrar vulnerabilidades antes que atacantes reales."
+    },
+    {
+      "id": 108,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué son credenciales comprometidas?",
+      "respuesta": "Usuarios/contraseñas filtradas en brechas de datos que pueden permitir accesos no autorizados."
+    },
+    {
+      "id": 109,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es el principio de privilegio mínimo?",
+      "respuesta": "Conceder a usuarios o procesos solo los permisos estrictamente necesarios."
+    },
+    {
+      "id": 110,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es el MITM (Man in the Middle)?",
+      "respuesta": "Ataque donde un atacante intercepta y potencialmente altera la comunicación entre dos partes."
+    },
+    {
+      "id": 111,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Cómo proteger datos en reposo y en tránsito?",
+      "respuesta": "En reposo usar cifrado de disco o contenedor; en tránsito usar TLS/SSL y VPNs."
+    },
+    {
+      "id": 112,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es un WAF?",
+      "respuesta": "Web Application Firewall; filtra y monitorea tráfico HTTP hacia aplicaciones web para bloquear ataques comunes."
+    },
+    {
+      "id": 113,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es un CVE?",
+      "respuesta": "Common Vulnerabilities and Exposures; identificador público para vulnerabilidades conocidas."
+    },
+    {
+      "id": 114,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es social engineering?",
+      "respuesta": "Manipulación psicológica de personas para obtener información o acceso."
+    },
+    {
+      "id": 115,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es seguridad por diseño?",
+      "respuesta": "Incorporar medidas de seguridad desde las etapas iniciales del desarrollo de sistemas."
+    },
+    {
+      "id": 116,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es un token de seguridad?",
+      "respuesta": "Dispositivo o app que genera códigos temporales para autenticación (ej. TOTP)."
+    },
+    {
+      "id": 117,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es la gestión de parches?",
+      "respuesta": "Proceso de aplicar actualizaciones de software para corregir vulnerabilidades y errores."
+    },
+    {
+      "id": 118,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es la suscripción a feeds de amenazas?",
+      "respuesta": "Servicio que informa sobre nuevas vulnerabilidades, IPs maliciosas y campañas de ataque."
+    },
+    {
+      "id": 119,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es la suplantación de DNS (DNS poisoning)?",
+      "respuesta": "Manipulación de respuestas DNS para redirigir tráfico a sitios maliciosos."
+    },
+    {
+      "id": 120,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es seguridad en capas (defense in depth)?",
+      "respuesta": "Estrategia con múltiples controles independientes para proteger sistemas si una capa falla."
+    },
+    {
+      "id": 121,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es un honeypot?",
+      "respuesta": "Sistema deliberadamente vulnerable para atraer atacantes y estudiar sus técnicas."
+    },
+    {
+      "id": 122,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Qué es la fuga de datos (data leakage)?",
+      "respuesta": "Exposición accidental o maliciosa de información confidencial fuera de la organización."
+    },
+    {
+      "id": 123,
+      "tipo": "ciberseguridad",
+      "pregunta": "¿Cuándo es crítico aplicar parches de seguridad?",
+      "respuesta": "Inmediatamente para vulnerabilidades explotadas en libertad o según política para otras vulnerabilidades."
+    },
+    {
+      "id": 124,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es Python y para qué se usa?",
+      "respuesta": "Lenguaje de programación de alto nivel, legible y versátil usado en web, ciencia de datos, scripting y automatización."
+    },
+    {
+      "id": 125,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es Java y dónde se utiliza?",
+      "respuesta": "Lenguaje orientado a objetos usado en aplicaciones empresariales, Android y sistemas backend."
+    },
+    {
+      "id": 126,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es JavaScript?",
+      "respuesta": "Lenguaje de scripting que se ejecuta en navegadores y en servidores (Node.js) para crear interactividad web."
+    },
+    {
+      "id": 127,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es un IDE?",
+      "respuesta": "Integrated Development Environment; entorno que facilita la escritura, depuración y gestión de código (ej. VSCode, PyCharm)."
+    },
+    {
+      "id": 128,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es control de versiones?",
+      "respuesta": "Sistema que registra cambios en archivos a lo largo del tiempo; Git es el estándar moderno."
+    },
+    {
+      "id": 129,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es Git y GitHub?",
+      "respuesta": "Git es un sistema de control de versiones; GitHub es una plataforma para alojar repositorios y colaborar."
+    },
+    {
+      "id": 130,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es una función (function) en programación?",
+      "respuesta": "Bloque de código reutilizable que realiza una tarea y puede recibir parámetros y devolver valores."
+    },
+    {
+      "id": 131,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es una variable?",
+      "respuesta": "Espacio de memoria con un nombre que almacena datos que pueden cambiar durante la ejecución."
+    },
+    {
+      "id": 132,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es recursión?",
+      "respuesta": "Técnica donde una función se llama a sí misma para resolver subproblemas más simples."
+    },
+    {
+      "id": 133,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es un bucle for y cuándo usarlo?",
+      "respuesta": "Estructura para repetir código un número determinado de veces o iterar colecciones."
+    },
+    {
+      "id": 134,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es POO (programación orientada a objetos)?",
+      "respuesta": "Paradigma que modela datos y comportamientos en objetos y clases para organizar el código."
+    },
+    {
+      "id": 135,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es testing unitario?",
+      "respuesta": "Pruebas que verifican el comportamiento correcto de unidades pequeñas de código, como funciones o clases."
+    },
+    {
+      "id": 136,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es debugging?",
+      "respuesta": "Proceso de localizar y corregir errores en el código."
+    },
+    {
+      "id": 137,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es un API REST?",
+      "respuesta": "Estilo arquitectónico para servicios web que usan HTTP y recursos con verbos (GET, POST, PUT, DELETE)."
+    },
+    {
+      "id": 138,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es una excepción y cómo manejarla?",
+      "respuesta": "Evento inesperado durante ejecución que puede ser capturado y gestionado para evitar fallos del programa."
+    },
+    {
+      "id": 139,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es una estructura de datos?",
+      "respuesta": "Forma organizada de almacenar datos (listas, pilas, colas, árboles, grafos) para operaciones eficientes."
+    },
+    {
+      "id": 140,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es complejidad algorítmica (Big O)?",
+      "respuesta": "Medida del crecimiento del tiempo o espacio que consume un algoritmo en función del tamaño de la entrada."
+    },
+    {
+      "id": 141,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es un framework?",
+      "respuesta": "Conjunto de librerías y convenciones que agilizan el desarrollo en un dominio (ej. Django, React)."
+    },
+    {
+      "id": 142,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es programación funcional?",
+      "respuesta": "Paradigma que prioriza funciones puras, inmutabilidad y evita efectos secundarios."
+    },
+    {
+      "id": 143,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es un patrón de diseño?",
+      "respuesta": "Solución reutilizable a problemas comunes en diseño de software (Singleton, Factory, Observer)."
+    },
+    {
+      "id": 144,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es un endpoint?",
+      "respuesta": "Punto de acceso a un servicio web donde se aceptan peticiones para realizar operaciones."
+    },
+    {
+      "id": 145,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es documentación de código y por qué es importante?",
+      "respuesta": "Explica el propósito y uso del código; facilita mantenimiento y colaboración."
+    },
+    {
+      "id": 146,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es una API key y cómo protegerla?",
+      "respuesta": "Clave que autentica peticiones a una API; protegerla evitando exponerla en repositorios y usando vaults."
+    },
+    {
+      "id": 147,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es un contenedor Docker?",
+      "respuesta": "Unidad ligera que empaqueta una aplicación con sus dependencias para ejecutarla de forma consistente."
+    },
+    {
+      "id": 148,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es la serialización?",
+      "respuesta": "Conversión de objetos a un formato (JSON, XML) que pueda almacenarse o transmitirse."
+    },
+    {
+      "id": 149,
+      "tipo": "programacion",
+      "pregunta": "¿Cómo elegir un lenguaje para un proyecto?",
+      "respuesta": "Depende de requisitos: rendimiento, ecosistema, rapidez de desarrollo, soporte y experiencia del equipo."
+    },
+    {
+      "id": 150,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es un garbage collector?",
+      "respuesta": "Mecanismo que libera memoria no referenciada automáticamente en lenguajes con manejo automático de memoria."
+    },
+    {
+      "id": 151,
+      "tipo": "programacion",
+      "pregunta": "¿Qué es mobile-first en diseño web?",
+      "respuesta": "Estrategia que prioriza el diseño para móviles antes de adaptar a pantallas grandes."
+    },
+    {
+      "id": 152,
+      "tipo": "ia",
+      "pregunta": "¿Qué es un modelo de lenguaje (LLM)?",
+      "respuesta": "Modelo entrenado para predecir texto y generar lenguaje natural a partir de ejemplos."
+    },
+    {
+      "id": 153,
+      "tipo": "ia",
+      "pregunta": "¿Qué diferencia hay entre aprendizaje supervisado y no supervisado?",
+      "respuesta": "Supervisado usa datos etiquetados; no supervisado busca patrones sin etiquetas."
+    },
+    {
+      "id": 154,
+      "tipo": "ia",
+      "pregunta": "¿Qué es overfitting?",
+      "respuesta": "Cuando un modelo aprende demasiado los datos de entrenamiento y pierde capacidad de generalizar a datos nuevos."
+    },
+    {
+      "id": 155,
+      "tipo": "ia",
+      "pregunta": "¿Qué es entrenamiento y validación?",
+      "respuesta": "Entrenamiento ajusta parámetros del modelo; validación evalúa rendimiento en datos no vistos para ajustar hiperparámetros."
+    },
+    {
+      "id": 156,
+      "tipo": "ia",
+      "pregunta": "¿Qué es fine-tuning?",
+      "respuesta": "Ajustar un modelo ya entrenado con datos específicos para una tarea concreta."
+    },
+    {
+      "id": 157,
+      "tipo": "ia",
+      "pregunta": "¿Qué es inferencia en IA?",
+      "respuesta": "Uso de un modelo entrenado para realizar predicciones sobre nuevos datos."
+    },
+    {
+      "id": 158,
+      "tipo": "ia",
+      "pregunta": "¿Qué son embeddings?",
+      "respuesta": "Representaciones numéricas de texto u objetos que capturan similitudes semánticas."
+    },
+    {
+      "id": 159,
+      "tipo": "ia",
+      "pregunta": "¿Qué es un dataset y cómo limpiarlo?",
+      "respuesta": "Conjunto de datos; limpieza implica eliminar duplicados, corregir errores y normalizar valores."
+    },
+    {
+      "id": 160,
+      "tipo": "ia",
+      "pregunta": "¿Qué es transferencia de aprendizaje?",
+      "respuesta": "Reusar conocimiento de un modelo entrenado en otra tarea similar para acelerar aprendizaje."
+    },
+    {
+      "id": 161,
+      "tipo": "ia",
+      "pregunta": "¿Qué es reinforcement learning?",
+      "respuesta": "Aprendizaje mediante recompensas donde un agente aprende a tomar decisiones optimizando una señal de recompensa."
+    },
+    {
+      "id": 162,
+      "tipo": "ia",
+      "pregunta": "¿Qué es ética en IA?",
+      "respuesta": "Consideraciones sobre sesgos, privacidad, transparencia y impacto social de sistemas de IA."
+    },
+    {
+      "id": 163,
+      "tipo": "ia",
+      "pregunta": "¿Qué es visión por computadora?",
+      "respuesta": "Campo de IA que permite a máquinas interpretar imágenes y video."
+    },
+    {
+      "id": 164,
+      "tipo": "ia",
+      "pregunta": "¿Qué es NLP (procesamiento del lenguaje natural)?",
+      "respuesta": "Área que estudia la interacción entre computadoras y lenguaje humano."
+    },
+    {
+      "id": 165,
+      "tipo": "ia",
+      "pregunta": "¿Qué es un pipeline de datos para IA?",
+      "respuesta": "Conjunto de pasos que transforman datos crudos en entradas listas para entrenamiento e inferencia."
+    },
+    {
+      "id": 166,
+      "tipo": "ia",
+      "pregunta": "¿Cómo medir rendimiento en clasificación?",
+      "respuesta": "Métricas: accuracy, precision, recall, F1-score dependiendo del equilibrio y objetivos."
+    },
+    {
+      "id": 167,
+      "tipo": "ia",
+      "pregunta": "¿Qué es una función de pérdida?",
+      "respuesta": "Medida numérica de qué tan lejos están las predicciones del modelo respecto a la verdad."
+    },
+    {
+      "id": 168,
+      "tipo": "ia",
+      "pregunta": "¿Qué es batch size y por qué importa?",
+      "respuesta": "Número de muestras procesadas antes de actualizar parámetros; influye en estabilidad y velocidad de entrenamiento."
+    },
+    {
+      "id": 169,
+      "tipo": "ia",
+      "pregunta": "¿Qué son GPUs y por qué se usan en IA?",
+      "respuesta": "Unidades de procesamiento paralelo que aceleran operaciones matriciales críticas en entrenamiento de modelos."
+    },
+    {
+      "id": 170,
+      "tipo": "ia",
+      "pregunta": "¿Qué es computación distribuida en IA?",
+      "respuesta": "Entrenar o inferir modelos usando múltiples máquinas para manejar mayor volumen de datos o modelos más grandes."
+    },
+    {
+      "id": 171,
+      "tipo": "ia",
+      "pregunta": "¿Qué es explainability en modelos?",
+      "respuesta": "Capacidad de entender por qué un modelo toma ciertas decisiones, importante para confianza y cumplimiento."
+    },
+    {
+      "id": 172,
+      "tipo": "bases_de_datos",
+      "pregunta": "¿Qué es SQL y para qué sirve?",
+      "respuesta": "Lenguaje para gestionar y consultar bases de datos relacionales usando sentencias como SELECT, INSERT, UPDATE, DELETE."
+    }
+    ]
+}    
