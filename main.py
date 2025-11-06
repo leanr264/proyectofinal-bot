@@ -25,11 +25,17 @@ if not GROQ_API_KEY:
 bot = tlb.TeleBot(TELEGRAM_TOKEN)
 groq_client = Groq(api_key=GROQ_API_KEY)
 
+# Instanciamos un objeto de la clase TelegramBot
+bot_instance = TelegramBot(bot)
+
+
+@bot.message_handler(content_types=['photo'])
+def manejar_imagen(mensaje):
+    bot_instance.definir_entrada(groq_client, mensaje)
+
 
 if __name__ == "__main__":
     try:
-        # Instanciamos un objeto de la clase TelegramBot
-        bot_instance = TelegramBot(bot)
         # Llamamos al metodo start(), que inicia el polling infinito para recibir mensajes de Telegram
         bot_instance.start()
     except Exception as e:
