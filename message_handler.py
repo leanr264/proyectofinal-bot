@@ -1,10 +1,9 @@
 
 
 class MessageHandler:
-    def __init__(self, groq_api_key, dataset):
+    def __init__(self, groq):
         print("Manejador creado. ¡Listo para trabajar!")
-        self._groq_key = groq_api_key
-        self._dataset = dataset
+        self._groq = groq
 
-    def procesar_entrada():
+    def procesar_entrada(self, bot, mensaje):
         pass

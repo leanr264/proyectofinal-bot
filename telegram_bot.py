@@ -1,4 +1,5 @@
 import telebot as tlb
+from image_handler import ImageHandler
 
 
 class TelegramBot:
@@ -9,5 +10,12 @@ class TelegramBot:
         print("Bot de Telegram IA (POO) iniciado. Esperando mensajes...")
         self._bot.infinity_polling()
 
-    def sendResponse(self, response):
-        self.bot.send_message(response)
+    def definir_entrada(self, groq, mensaje):
+        if mensaje.photo:
+            handler = ImageHandler(groq)
+
+        respuesta = handler.procesar_entrada(self._bot, mensaje)
+        self._bot.send_message(mensaje.chat.id, respuesta)
+
+    def send_response(self, mensaje):
+        return
