@@ -1,54 +1,52 @@
-# # Importamos la función 'pipeline' de la biblioteca transformers
-# from transformers import pipeline
-from Sentiment_analyzer import analizador_Sentimiento
+
+import telebot
+from Sentimentanalyzer import AnalizadorSentimiento
 
 
-# # 1. Creamos el pipeline de análisis de sentimiento
-# #    - Especificamos la tarea: "sentiment-analysis".
-# #    - Elegimos un modelo pre-entrenado. 'nlptown/bert-base-multilingual-uncased-sentiment'
-# #      es un modelo multilenguaje popular y eficiente que está disponible públicamente.
-# print("Cargando el modelo de análisis de sentimiento...")
-# analizador_sentimiento = pipeline(
-#     "sentiment-analysis",
-#     model="pysentimiento/robertuito-sentiment-analysis"
-#     #model="nlptown/bert-base-multilingual-uncased-sentiment" 
-# )
-# print("¡Modelo cargado con éxito! ✅")
+TOKEN = "7692994606:AAFi-7Z-a9OciK-4PREMYqr3mUXKMUGHmxI"
 
-# # 2. Preparamos una lista de frases para analizar
-# frases_para_analizar = [
-#     "¡Me encantó este curso, aprendí muchísimo!",
-#     "El servicio al cliente fue bastante lento y poco útil.",
-#     "La película estuvo bien, aunque el final fue predecible.",
-#     "Estoy muy decepcionado con la calidad del producto.",
-#     "Qué día tan maravilloso para salir a caminar.",
-#     "No estoy seguro de si volvería a comprar en esa tienda."
-# ]
+bot = telebot.TeleBot(TOKEN)
+analizador = AnalizadorSentimiento()
 
-# # 3. Usamos el pipeline para obtener el sentimiento de cada frase
-# print("\nAnalizando frases...")
-# resultados = analizador_sentimiento(frases_para_analizar)
 
-# # 4. Mostramos los resultados de una forma clara
-# for frase, resultado in zip(frases_para_analizar, resultados):
-#     sentimiento = resultado['label']
-#     confianza = resultado['score']
-    
-#     # Añadimos un emoji para hacerlo más visual
-#     # El modelo 'nlptown/bert-base-multilingual-uncased-sentiment' devuelve etiquetas como '1 star', '2 stars', etc.
-#     # Acá mapeamos esas estrellas a sentimientos más generales para los emojis.
-#     emoji = "❓"
-#     if "star" in sentimiento:
-#         if sentimiento == '5 stars':
-#             emoji = "😊" # Muy positivo
-#         elif sentimiento == '4 stars':
-#             emoji = "🙂" # Positivo
-#         elif sentimiento == '3 stars':
-#             emoji = "😐" # Neutral
-#         elif sentimiento == '2 stars':
-#             emoji = "😟" # Negativo
-#         elif sentimiento == '1 star':
-#             emoji = "😠" # Muy negativo
+#con esto prende la maquina ah
+@bot.message_handler(commands=["start"])
+def send_welcome(message):
+    bot.reply_to(
+     message,
+        "👋 ¡Hola! Soy un bot parte del *Capstone Project* 🧠\n\n"
+        "Usá el comando /analizar seguido de un texto para saber su sentimiento.\n"
+        " para analizar imágenes.\n"
+        "O enviá un mensaje para conversar con nuestro proyecto sobre consultas informáticas 💬\n",
+    parse_mode="Markdown"
+)
 
-#     print(f"\nFrase: '{frase}'")
-#     print(f"  -> Sentimiento Detectado: {sentimiento.upper()} {emoji} (Confianza: {confianza:.2%})")
+
+#Comando especifico para el bot de analisis de sentimiento :P
+@bot.message_handler(commands=["analizar"])
+def analizar_command(message):
+    texto = message.text.replace("/analizar", "").strip()
+
+    if not texto:
+        bot.reply_to(
+            message,
+            "⚠️ Por favor escribí algo después del comando.\n\nEjemplo:\n`/analizar Hoy no quiero laburar, porque esta soleado`",
+            parse_mode="Markdown"
+        )
+        return
+
+    resultado = analizador.analizar(texto)
+    bot.reply_to(message, f"🧠 *Análisis de Sentimiento:*\n{resultado}", parse_mode="Markdown")
+
+
+@bot.message_handler(func=lambda message: True)
+def respuesta_general(message):
+    bot.reply_to(
+        message,
+        " Puedo analizar tus oraciones.\nUsá el comando `/analizar` seguido del texto que quieras analizar.",
+        parse_mode="Markdown"
+    )
+
+
+print(" Bot iniciado... Esperando mensajes en Telegram.")
+bot.infinity_polling()
