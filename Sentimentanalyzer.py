@@ -28,10 +28,3 @@ class AnalizadorSentimiento:
 
         return f"Sentimiento: {sentimiento} {emoji}\nConfianza: {confianza:.2%}"
 
-
-# 🧪 Solo se ejecuta si corres este archivo directamente
-if __name__ == "__main__":
-    analizador = AnalizadorSentimiento()
-    texto = input("Escribí una frase para analizar: ")
-    resultado = analizador.analizar(texto)
-    print(resultado)
