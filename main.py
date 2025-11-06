@@ -16,7 +16,7 @@ def send_welcome(message):
      message,
         "👋 ¡Hola! Soy un bot parte del *Capstone Project* 🧠\n\n"
         "Usá el comando /analizar seguido de un texto para saber su sentimiento.\n"
-        " para analizar imágenes.\n"
+        "Tambien puedes compartir imagenes para que las analice\n"
         "O enviá un mensaje para conversar con nuestro proyecto sobre consultas informáticas 💬\n",
     parse_mode="Markdown"
 )
