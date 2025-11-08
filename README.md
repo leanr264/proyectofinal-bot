@@ -1,4 +1,5 @@
 
+
 falta hacer que la clase sentiment-analyzer funcione  en telegram y puedas escribir la frase que vos quieras-
 YA LO HICE
 falta agregar a las otras clases para hacerlo funcionar con los otros
