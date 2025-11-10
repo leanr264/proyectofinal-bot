@@ -1,4 +1,6 @@
 
+from Sentimentanalyzer import AnalizadorSentimiento
+import telebot
 import telebot as tlb
 import requests
 import json
@@ -43,10 +45,6 @@ if __name__ == "__main__":
         bot.start()
     except Exception as e:
         print(f"Error fatal al iniciar el bot: {e}")
-=======
-
-import telebot
-from Sentimentanalyzer import AnalizadorSentimiento
 
 
 TOKEN = "7692994606:AAFi-7Z-a9OciK-4PREMYqr3mUXKMUGHmxI"
@@ -55,20 +53,20 @@ bot = telebot.TeleBot(TOKEN)
 analizador = AnalizadorSentimiento()
 
 
-#con esto prende la maquina ah
+# con esto prende la maquina ah
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
     bot.reply_to(
-     message,
+        message,
         "👋 ¡Hola! Soy un bot parte del *Capstone Project* 🧠\n\n"
         "Usá el comando /analizar seguido de un texto para saber su sentimiento.\n"
         "Tambien puedes compartir imagenes para que las analice\n"
         "O enviá un mensaje para conversar con nuestro proyecto sobre consultas informáticas 💬\n",
-    parse_mode="Markdown"
-)
+        parse_mode="Markdown"
+    )
 
 
-#Comando especifico para el bot de analisis de sentimiento :P
+# Comando especifico para el bot de analisis de sentimiento :P
 @bot.message_handler(commands=["analizar"])
 def analizar_command(message):
     texto = message.text.replace("/analizar", "").strip()
@@ -82,7 +80,8 @@ def analizar_command(message):
         return
 
     resultado = analizador.analizar(texto)
-    bot.reply_to(message, f"🧠 *Análisis de Sentimiento:*\n{resultado}", parse_mode="Markdown")
+    bot.reply_to(
+        message, f"🧠 *Análisis de Sentimiento:*\n{resultado}", parse_mode="Markdown")
 
 
 @bot.message_handler(func=lambda message: True)
