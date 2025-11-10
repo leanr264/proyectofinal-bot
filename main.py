@@ -23,16 +23,24 @@ if not GROQ_API_KEY:
     raise ValueError("No se encuentra API_KEY de Groq")
 
 # instanciar objetos de clases
-bot = tlb.TeleBot(TELEGRAM_TOKEN)
+bot = TelegramBot(TELEGRAM_TOKEN)
 groq_client = Groq(api_key=GROQ_API_KEY)
+
+
+@bot._bot.message_handler(commands=["start", "help"])
+def welcome(mensaje):
+    bot.send_welcome(mensaje)
+
+
+@bot._bot.message_handler(content_types=['photo'])
+def manejar_imagen(mensaje):
+    bot.definir_entrada(groq_client, mensaje)
 
 
 if __name__ == "__main__":
     try:
-        # Instanciamos un objeto de la clase TelegramBot
-        bot_instance = TelegramBot(bot)
         # Llamamos al metodo start(), que inicia el polling infinito para recibir mensajes de Telegram
-        bot_instance.start()
+        bot.start()
     except Exception as e:
         print(f"Error fatal al iniciar el bot: {e}")
 =======
