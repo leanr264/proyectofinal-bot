@@ -1,5 +1,5 @@
 
-CAPSTONE PROJECT SAMSUNG INNOVATION CAMPUS 
+CAPSTONE PROJECT SAMSUNG INNOVATION CAMPUS (CODEX DEBUG)
 
 
   Este es un bot de telegram el cual cumple varias funciones:
@@ -13,5 +13,6 @@ Todo esto realizdo mediante diferentes clases las cuales son llamadas a un archi
 
 
   
+
 
 
