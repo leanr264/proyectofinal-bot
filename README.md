@@ -1,4 +1,4 @@
-CAPSTONE PROJECT SAMSUNG INNOVATION CAMPUS  \n
+CAPSTONE PROJECT SAMSUNG INNOVATION CAMPUS 
   Este es un bot de telegram el cual cumple varias funciones:
       - Entre ellas se encuentra la de analizar imagenes y responder con un informe conciso sobre lo que hay en la imagen.
       - Analizar audios los cuales responde mediante el uso de un dataset sobre informatica
