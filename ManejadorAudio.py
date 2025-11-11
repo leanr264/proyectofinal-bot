@@ -2,7 +2,7 @@ import telebot
 import os
 from typing import Optional
 from groq import Groq  # Importamos la librería de cliente de Groq para el audio
-from ManejadorDeTexto import ManejadorDeTexto # Importamos tu clase de texto para la interconexión
+from Manejador import ManejadorDeTexto # Importamos tu clase de texto para la interconexión
 
 class ManejadorDeAudio:
     """
