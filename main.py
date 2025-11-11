@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> c2fb448c6784ca01fc3271a3cbc697818cf11b3d
 import telebot as tlb
 import requests
 import json
@@ -46,11 +42,6 @@ if __name__ == "__main__":
         bot.start()
     except Exception as e:
         print(f"Error fatal al iniciar el bot: {e}")
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> c2fb448c6784ca01fc3271a3cbc697818cf11b3d
 
 import telebot
 from Sentimentanalyzer import AnalizadorSentimiento
