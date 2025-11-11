@@ -1,4 +1,4 @@
-import telebot as tlb
+import telebot
 import requests
 import json
 import os
@@ -22,7 +22,7 @@ if not GROQ_API_KEY:
     raise ValueError("No se encuentra API_KEY de Groq")
 
 # instanciar objetos de clases
-bot = tlb.TeleBot(TELEGRAM_TOKEN)
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
 groq_client = Groq(api_key=GROQ_API_KEY)
 
 
