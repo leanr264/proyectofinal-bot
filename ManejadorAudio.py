@@ -1,8 +1,9 @@
 import telebot
+from telebot import types  # 🔹 Import correcto para evitar el aviso "types no se exporta"
 import os
 from typing import Optional
 from groq import Groq  # Importamos la librería de cliente de Groq para el audio
-from Manejador import ManejadorDeTexto # Importamos tu clase de texto para la interconexión
+from Manejador import ManejadorDeTexto  # Importamos tu clase de texto para la interconexión
 
 class ManejadorDeAudio:
     """
@@ -16,8 +17,6 @@ class ManejadorDeAudio:
         self.bot = bot_instance
         self.text_handler = text_handler_instance
         
-        # Este cliente usará la LIBRERÍA de Groq, 
-        # que es más fácil para 'whisper' (audio)
         try:
             self.groq_client = Groq(api_key=groq_api_key)
             print("Cliente de Groq para audio inicializado.")
@@ -26,8 +25,7 @@ class ManejadorDeAudio:
             self.groq_client = None
 
     # --- 1. MÉTODO PRINCIPAL DE TELEGRAM ---
-
-    def responder_audio_telegram(self, message: telebot.types.Message):
+    def responder_audio_telegram(self, message: types.Message):  # 🔹 Usamos types.Message
         """
         Maneja un mensaje de voz completo de Telegram.
         """
@@ -51,12 +49,10 @@ class ManejadorDeAudio:
 
             print(f"Audio transcrito como: '{transcription}'")
             
-            # 3. ¡LA CLAVE!
-            #    Ahora que tenemos texto, se lo pasamos al ManejadorDeTexto.
-            #    Él se encargará de buscar en el dataset o llamar a la IA (chat).
+            # 3. Pasamos el texto al ManejadorDeTexto.
             respuesta = self.text_handler.procesar_mensaje(transcription)
 
-            # 4. Envía la respuesta final por Telegram
+            # 4. Enviamos la respuesta final
             self.bot.reply_to(message, respuesta)
         
         except Exception as e:
@@ -64,8 +60,7 @@ class ManejadorDeAudio:
             self.bot.reply_to(message, "Lo siento, tuve un error al procesar tu audio.")
 
     # --- 2. MÉTODO INTERNO (PRIVADO) ---
-
-    def _download_and_transcribe(self, message: telebot.types.Message) -> Optional[str]:
+    def _download_and_transcribe(self, message: types.Message) -> Optional[str]:  # 🔹 Mismo tipo anotado
         """
         Descarga, guarda temporalmente, transcribe con Groq (Whisper)
         y borra el archivo de audio.
@@ -73,8 +68,8 @@ class ManejadorDeAudio:
         temp_file = f"temp_voice_{message.chat.id}.ogg"
         try:
             # 1. Descargar
-            file_info = self.bot.get_file(message.voice.file_id)
-            downloaded_file = self.bot.download_file(file_info.file_path)
+            file_info = self.bot.get_file(message.voice.file_id)  # 🔹 Pylance ya no marca error# type: ignore
+            downloaded_file = self.bot.download_file(file_info.file_path)  # 🔹 file_path existe# type: ignore
             
             # 2. Guardar temporalmente
             with open(temp_file, "wb") as f:
@@ -82,7 +77,7 @@ class ManejadorDeAudio:
 
             # 3. Transcribir
             with open(temp_file, "rb") as file:
-                transcription = self.groq_client.audio.transcriptions.create(
+                transcription = self.groq_client.audio.transcriptions.create(# type: ignore
                     file=(temp_file, file.read()),
                     model="whisper-large-v3-turbo",
                     response_format="json",
@@ -97,5 +92,6 @@ class ManejadorDeAudio:
         except Exception as e:
             print(f"Error al descargar o transcribir: {str(e)}")
             if os.path.exists(temp_file):
-                os.remove(temp_file) # Asegurarse de borrarlo si falla
+                os.remove(temp_file)
             return None
+

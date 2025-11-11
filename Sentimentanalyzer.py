@@ -3,7 +3,7 @@
 from transformers import pipeline
 
 print("🧠 Cargando el modelo de análisis de sentimiento...")
-analizador_de_sentimiento = pipeline("sentiment-analysis", model="pysentimiento/robertuito-sentiment-analysis")
+analizador_de_sentimiento = pipeline("sentiment-analysis", model="pysentimiento/robertuito-sentiment-analysis") # type: ignore
 print("✅ Modelo cargado con éxito.")
 
 

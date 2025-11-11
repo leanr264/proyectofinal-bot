@@ -1,10 +1,10 @@
-import telebot as tlb
+import telebot
 from image_handler import ImageHandler
 
 
 class TelegramBot:
     def __init__(self, token):
-        self._bot = tlb.TeleBot(token)
+        self._bot = telebot.TeleBot(token)
 
     def start(self):
         print("Bot de Telegram IA (POO) iniciado. Esperando mensajes...")
