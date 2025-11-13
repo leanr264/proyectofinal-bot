@@ -1,5 +1,3 @@
-
-from Sentimentanalyzer import AnalizadorSentimiento
 import telebot as tlb
 import requests
 import json
@@ -17,6 +15,7 @@ load_dotenv()
 
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+# PATH_DATASET = "datainformática.json"
 
 if not TELEGRAM_TOKEN:
     raise ValueError("El token de telegram no se cargo")
@@ -41,6 +40,16 @@ def manejar_imagen(mensaje):
 # Comando especifico para el bot de analisis de sentimiento
 @bot._bot.message_handler(commands=["analizar"])
 def analizar_sentimiento(message):
+    bot.definir_entrada(groq_client, message)
+
+
+@bot._bot.message_handler(content_types=['text'])
+def responder_consulta(message):
+    bot.definir_entrada(groq_client, message)
+
+
+@bot._bot.message_handler(content_types=['voice'])
+def transcribir_audio(message):
     bot.definir_entrada(groq_client, message)
 
 

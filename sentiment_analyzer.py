@@ -1,17 +1,15 @@
-# Sentimentanalyzer.py
-
 from transformers import pipeline
-# from message_handler import MessageHandler
-
-print("🧠 Cargando el modelo de análisis de sentimiento...")
-analizador_de_sentimiento = pipeline(
-    "sentiment-analysis", model="pysentimiento/robertuito-sentiment-analysis")
-print("✅ Modelo cargado con éxito.")
 
 
 class AnalizadorSentimiento():
     def __init__(self):
-        # super().__init__(groq)
+
+        # cargamos el modelo de analisis de sentimientos
+        print("🧠 Cargando el modelo de análisis de sentimiento...")
+        analizador_de_sentimiento = pipeline(
+            "sentiment-analysis", model="pysentimiento/robertuito-sentiment-analysis")
+        print("✅ Modelo cargado con éxito.")
+
         # Guardamos el modelo dentro de la instancia
         self.analizador = analizador_de_sentimiento
 
