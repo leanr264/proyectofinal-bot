@@ -1,4 +1,3 @@
-from Sentimentanalyzer import AnalizadorSentimiento
 import telebot as tlb
 import requests
 import json
@@ -16,6 +15,7 @@ load_dotenv()
 
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+# PATH_DATASET = "datainformática.json"
 
 if not TELEGRAM_TOKEN:
     raise ValueError("El token de telegram no se cargo")
@@ -43,11 +43,19 @@ def analizar_sentimiento(message):
     bot.definir_entrada(groq_client, message)
 
 
+@bot._bot.message_handler(content_types=['text'])
+def responder_consulta(message):
+    bot.definir_entrada(groq_client, message)
+
+
+@bot._bot.message_handler(content_types=['voice'])
+def transcribir_audio(message):
+    bot.definir_entrada(groq_client, message)
+
+
 if __name__ == "__main__":
     try:
-        # Instanciamos un objeto de la clase TelegramBot
-        bot_instance = TelegramBot(bot)
         # Llamamos al metodo start(), que inicia el polling infinito para recibir mensajes de Telegram
-        bot_instance.start()
+        bot.start()
     except Exception as e:
         print(f"Error fatal al iniciar el bot: {e}")
