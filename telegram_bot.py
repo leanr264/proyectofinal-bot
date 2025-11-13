@@ -1,6 +1,8 @@
 import telebot
 from image_handler import ImageHandler
-from Sentimentanalyzer import AnalizadorSentimiento
+from sentiment_analyzer import AnalizadorSentimiento
+from manejador_texto import ManejadorDeTexto
+from manejador_audio import ManejadorDeAudio
 
 
 class TelegramBot:
@@ -27,10 +29,13 @@ class TelegramBot:
         if mensaje.photo:
             handler = ImageHandler(groq)
         elif mensaje.text:
-            handler = AnalizadorSentimiento()
+            # handler = AnalizadorSentimiento()
+            handler = ManejadorDeTexto(groq)
+        elif mensaje.voice:
+            handler = ManejadorDeAudio(groq)
 
         respuesta = handler.procesar_entrada(self._bot, mensaje)
-        self._bot.send_message(mensaje.chat.id, respuesta)
+        self._bot.reply_to(mensaje, respuesta)
 
     def send_response(self, respuesta):
         return
