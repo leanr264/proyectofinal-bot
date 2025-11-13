@@ -23,7 +23,7 @@ if not GROQ_API_KEY:
     raise ValueError("No se encuentra API_KEY de Groq")
 
 # instanciar objetos de clases
-bot = telebot.TeleBot(TELEGRAM_TOKEN)
+bot = TelegramBot(TELEGRAM_TOKEN)
 groq_client = Groq(api_key=GROQ_API_KEY)
 
 
