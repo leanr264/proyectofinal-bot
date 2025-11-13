@@ -138,9 +138,6 @@ cd proyectofinal-bot
 2. Crear Entorno Virtual (Recomendado)
 Bash
 
-¡Excelente iniciativa! Un README.md profesional es la carta de presentación de tu código. Si alguien entra a tu repositorio y ve un documento limpio, estructurado y claro, asumirá inmediatamente que el código tiene la misma calidad.
-
-
 Markdown
 
 # 🤖 **TELEGRAM INFOBOT: ASISTENTE DE INTELIGENCIA ARTIFICIAL**
