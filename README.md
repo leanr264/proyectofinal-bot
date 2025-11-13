@@ -73,12 +73,6 @@ source venv/bin/activate
 
 ¡Excelente iniciativa! Un README.md profesional es la carta de presentación de tu código. Si alguien entra a tu repositorio y ve un documento limpio, estructurado y claro, asumirá inmediatamente que el código tiene la misma calidad.
 
-Basándome en tu código actual (el uso de Groq, la lógica del JSON y Telebot) y las funcionalidades que mencionaste (audio, imagen, sentimientos), he redactado este documento.
-
-Copia y pega el siguiente bloque de código en tu archivo README.md.
-
-Markdown
-
 # 🤖 **TELEGRAM INFOBOT: ASISTENTE DE INTELIGENCIA ARTIFICIAL**
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)
@@ -146,9 +140,6 @@ Bash
 
 ¡Excelente iniciativa! Un README.md profesional es la carta de presentación de tu código. Si alguien entra a tu repositorio y ve un documento limpio, estructurado y claro, asumirá inmediatamente que el código tiene la misma calidad.
 
-Basándome en tu código actual (el uso de Groq, la lógica del JSON y Telebot) y las funcionalidades que mencionaste (audio, imagen, sentimientos), he redactado este documento.
-
-Copia y pega el siguiente bloque de código en tu archivo README.md.
 
 Markdown
 
