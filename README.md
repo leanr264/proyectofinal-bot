@@ -114,4 +114,5 @@ proyectofinal-bot/
 ├── datainformática.json  # Base de conocimiento (Dataset)
 ├── .gitignore            # Archivos ignorados por Git
 └── README.md             # Documentación
+└──Sentimentanalyzer.py   #Script del analizador de sentimientos
 ```
