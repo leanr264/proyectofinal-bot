@@ -2,12 +2,12 @@ import json
 import os
 import telebot
 import requests
-from fuzzywuzzy import fuzz
 
 class ManejadorDeTexto:
     """
-    Esta clase se encarga de procesar un texto y decidir
-    si responde desde un dataset local o desde la IA de Groq.
+    Esta clase ahora usa Groq como motor principal,
+    limitando sus respuestas ÚNICAMENTE al dataset proporcionado
+    a través de un system prompt.
     """
 
     def __init__(self, dataset, groq_api_key, groq_api_url, bot_instance: telebot.TeleBot):
@@ -17,7 +17,35 @@ class ManejadorDeTexto:
         self.groq_url = groq_api_url
         self.bot = bot_instance
 
-    # --- 1. MÉTODOS PRINCIPALES DE TELEGRAM ---
+        # --- ¡NUEVO! ---
+        # 1. Convertimos el dataset (que es una lista) a un string JSON.
+        #    Lo hacemos una sola vez para ser eficientes.
+        try:
+            self.dataset_json_string = json.dumps(self.dataset, ensure_ascii=False, indent=2)
+            print("Dataset serializado correctamente para Groq.")
+        except Exception as e:
+            print(f"Error al serializar el dataset: {e}")
+            self.dataset_json_string = "[]" # Usar un string vacío en caso de error
+
+        # 2. Creamos la plantilla del System Prompt (basado en tu ejemplo)
+        #    Usamos {self.dataset_json_string} como marcador de posición.
+        self.system_prompt_template = f"""Eres el asistente virtual InfoBot, experto en informática.
+Tu tarea es responder preguntas usando EXCLUSIVAMENTE la información del siguiente dataset educativo.
+
+Dataset de referencia:
+{self.dataset_json_string}
+
+Reglas importantes:
+- Solo puedes responder usando la información contenida en el dataset.
+- No inventes ni añadas información que no esté allí.
+- Si el usuario pregunta algo fuera del dataset, responde: "No tengo esa información en mi base de datos, pero puedo ayudarte con conceptos informáticos básicos."
+- Mantén un tono educativo, claro y amigable.
+- Usa emojis apropiados para el contexto tecnológico 🤖.
+- No incluyas saludos después de la primera interacción.
+- Si hay varias respuestas relacionadas, combina la información de manera clara y ordenada.
+"""
+
+    # --- 1. MÉTODOS PRINCIPALES DE TELEGRAM  ---
 
     def responder_texto_telegram(self, message: telebot.types.Message):
         """
@@ -28,13 +56,10 @@ class ManejadorDeTexto:
         print(f"Usuario [{chat_id}] dice: {pregunta}")
 
         try:
-            # 1. Animación de "escribiendo..."
             self.bot.send_chat_action(chat_id, "typing")
             
-            # 2. Procesa el mensaje
             respuesta = self.procesar_mensaje(pregunta)
             
-            # 3. Envía la respuesta por Telegram
             self.bot.reply_to(message, respuesta)
         
         except Exception as e:
@@ -44,56 +69,18 @@ class ManejadorDeTexto:
     def procesar_mensaje(self, mensaje_usuario: str) -> str:
         """
         Procesa el mensaje del usuario.
-        Primero intenta responder desde el dataset, si falla, consulta a Groq.
+        Ahora SIEMPRE consulta a Groq usando el dataset como contexto.
         """
-        # Paso A: Intentar responder con el dataset
-        respuesta_dataset = self._buscar_en_dataset(mensaje_usuario)
-        
-        if respuesta_dataset:
-            # ¡Éxito! Lo encontramos en el dataset
-            print("Respondiendo desde el Dataset...")
-            return respuesta_dataset
-        else:
-            # Paso B: No estaba en el dataset, vamos a Groq
-            print("Dataset no tiene la respuesta, consultando a Groq...")
-            return self._llamar_a_groq(mensaje_usuario)
+        print("Consultando a Groq con el dataset como contexto...")
+        return self._llamar_a_groq(mensaje_usuario)
 
-    # --- 2. MÉTODOS INTERNOS (PRIVADOS) ---
-
-    def _buscar_en_dataset(self, pregunta: str) -> str | None:
-        """
-        Busca la pregunta en el dataset usando "fuzzy matching" 
-        para tolerar errores ortográficos y puntuación.
-        """
-        # Limpiamos la pregunta del usuario (minúsculas y espacios)
-        pregunta_usuario_limpia = " ".join(pregunta.lower().split())
-
-        mejor_puntuacion = 0
-        mejor_respuesta = None
-        
-        # Define qué tan parecida debe ser la pregunta (de 0 a 100).
-        UMBRAL_DE_COINCIDENCIA = 85
-
-        for item in self.dataset:
-            # Obtenemos y limpiamos la pregunta del dataset
-            pregunta_dataset = item.get('pregunta', '')
-            pregunta_dataset_limpia = " ".join(pregunta_dataset.lower().split())
-
-            # Calculamos la similitud
-            puntuacion = fuzz.token_sort_ratio(pregunta_usuario_limpia, pregunta_dataset_limpia)
-
-            if puntuacion > UMBRAL_DE_COINCIDENCIA and puntuacion > mejor_puntuacion:
-                mejor_puntuacion = puntuacion
-                mejor_respuesta = item['respuesta']
-
-        return mejor_respuesta
 
     def _llamar_a_groq(self, mensaje: str) -> str:
         """
-        Llama a la API de Groq y devuelve la respuesta, con manejo de errores mejorado.
+        Llama a la API de Groq usando el system_prompt pre-cargado
+        que contiene todo el dataset.
         """
         
-        # 1. Revisar que el mensaje no esté vacío
         if not mensaje or not mensaje.strip():
             print("Error: Se intentó llamar a Groq con un mensaje vacío.")
             return "No puedo procesar una solicitud vacía."
@@ -102,22 +89,28 @@ class ManejadorDeTexto:
             'Authorization': f'Bearer {self.groq_key}',
             'Content-Type': 'application/json'
         }
+        
         data = {
-            "model": "moonshotai/kimi-k2-instruct-0905",
-            "messages": [{"role": "user", "content": mensaje}]
+            "model": "llama-3.3-70b-versatile", 
+            "messages": [
+                {"role": "system", "content": self.system_prompt_template}, 
+                {"role": "user", "content": mensaje}
+            ],
+            "temperature": 0.3, 
+            "max_tokens": 500   
         }
         
         try:
-            resp = requests.post(self.groq_url, headers=headers, json=data, timeout=20)
+            resp = requests.post(self.groq_url, headers=headers, json=data, timeout=30) 
             
             if resp.status_code == 200:
-                # Éxito
+           
                 return resp.json()['choices'][0]['message']['content'].strip()
             else:
-                # 2. Imprimir el error real de Groq
+              
                 print(f"Error: Groq devolvió un status code {resp.status_code}")
                 print("Respuesta completa de Groq:")
-                print(resp.text) # <-- ¡Esto nos dirá el problema!
+                print(resp.text)
                 
                 try:
                     error_info = resp.json()
@@ -131,20 +124,15 @@ class ManejadorDeTexto:
             return f"[Error de conexión a Groq: {e}]"
 
 
-    # --- 3. MÉTODO ESTÁTICO (HERRAMIENTA) ---
-
     @staticmethod
     def cargar_dataset(path_dataset):
         """
-        (ESTA ES LA VERSIÓN CORRECTA, SIN DUPLICADOS)
         Carga el JSON y devuelve SÓLO la lista interna 'dataset'.
+        Esto es vital para que __init__ funcione.
         """
         try:
             with open(path_dataset, 'r', encoding='utf-8') as f:
-                # 1. Cargamos el diccionario completo
                 data = json.load(f)
-                
-                # 2. Devolvemos SOLAMENTE la lista interna "dataset"
                 return data['dataset']
                 
         except FileNotFoundError:

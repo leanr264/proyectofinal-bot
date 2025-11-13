@@ -1,4 +1,3 @@
-
 from Sentimentanalyzer import AnalizadorSentimiento
 import telebot as tlb
 import requests
@@ -24,7 +23,7 @@ if not GROQ_API_KEY:
     raise ValueError("No se encuentra API_KEY de Groq")
 
 # instanciar objetos de clases
-bot = TelegramBot(TELEGRAM_TOKEN)
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
 groq_client = Groq(api_key=GROQ_API_KEY)
 
 
@@ -46,7 +45,9 @@ def analizar_sentimiento(message):
 
 if __name__ == "__main__":
     try:
+        # Instanciamos un objeto de la clase TelegramBot
+        bot_instance = TelegramBot(bot)
         # Llamamos al metodo start(), que inicia el polling infinito para recibir mensajes de Telegram
-        bot.start()
+        bot_instance.start()
     except Exception as e:
         print(f"Error fatal al iniciar el bot: {e}")
