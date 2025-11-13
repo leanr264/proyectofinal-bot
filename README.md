@@ -1,97 +1,261 @@
 
 CAPSTONE PROJECT SAMSUNG INNOVATION CAMPUS (CODEX DEBUG)
 
+# 🤖 **TELEGRAM INFOBOT: ASISTENTE DE INTELIGENCIA ARTIFICIAL**
 
-  Este es un bot de telegram el cual cumple varias funciones:
-      - Entre ellas se encuentra la de analizar imagenes y responder con un informe conciso sobre lo que hay en la imagen.
-      - Analizar audios los cuales responde mediante el uso de un dataset sobre informatica
-      - Analiza emociones en los mensajes de texto que le compartas y responde con la emocion que detecta y su confianza/seguridad en su resultado.
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-Bot-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)
+![Groq](https://img.shields.io/badge/AI-Groq-orange?style=for-the-badge)
 
+> Un asistente virtual avanzado diseñado para responder consultas informáticas de manera precisa, restringida y segura, integrando capacidades multimodales (Texto, Voz e Imagen).
 
-Todo esto realizdo mediante diferentes clases las cuales son llamadas a un archivo principal (main.py) el cual se debe ejecutar despues de descargar los "requirements.txt".
+---
 
-Este repositorio aloja el código fuente completo de un ChatBot inteligente para Telegram diseñado para responder consultas específicas de índole informática y realizar tareas avanzadas de procesamiento de lenguaje natural y multimedia, como el análisis de sentimientos y el procesamiento de imágenes y voz.
+## 📋 **DESCRIPCIÓN DEL PROYECTO**
 
-    El bot se ha desarrollado con una estructura modular y escalable, enfocándose en la eficiencia en la respuesta mediante la lectura directa de una base de conocimiento estructurada en formato JSON. Esta aproximación garantiza respuestas precisas y contextuales dentro del dominio informático definido.
+Este proyecto consiste en un **ChatBot para Telegram** desarrollado en Python. Su núcleo es un sistema de **Generación Aumentada por Recuperación (RAG)** simplificado, que utiliza la potencia de los LLMs (vía Groq API) pero restringe estrictamente el conocimiento a un dataset local (`datainformática.json`).
 
-🌟 FUNCIONALIDADES PRINCIPALES
-    El proyectofinal-bot no es solo un sistema de preguntas y respuestas; integra varias capacidades avanzadas para ofrecer una interacción rica y útil:
+El objetivo es ofrecer un asistente educativo o de soporte técnico que **no alucine** información, sino que interprete y exponga datos verídicos previamente curados, además de analizar el contexto emocional del usuario.
 
-ASISTENCIA INFORMÁTICA CON BASE DE CONOCIMIENTO (JSON):
+---
 
-    El bot recibe consultas textuales y utiliza un archivo knowledge_base.json como su fuente principal de verdad.
+## 🚀 **CARACTERÍSTICAS PRINCIPALES**
 
-    Limitación Clave: El bot está configurado para responder solo a temas que se encuentren explícitamente definidos en este JSON. Cualquier consulta fuera de este ámbito resultará en una respuesta estándar de fuera de tema, asegurando la calidad y relevancia de la información proporcionada.
+El bot cuenta con cuatro módulos fundamentales de interacción:
 
-ANÁLISIS DE SENTIMIENTOS:
+* **💬 Respuestas Basadas en Dataset (RAG Estricto)**
+    * El bot lee un archivo JSON local con información técnica.
+    * Utiliza un *System Prompt* avanzado para instruir a la IA (Llama-3 via Groq) a responder **únicamente** con la información de ese archivo.
+    * Si la pregunta está fuera del alcance del dataset, el bot declina amablemente la respuesta.
 
-    Permite al bot indicar qué sentimiento (positivo, negativo, neutro) transmite el mensaje del usuario. Esto es vital para monitorizar la satisfacción del usuario y adaptar futuras interacciones.
+* **🎭 Análisis de Sentimientos**
+    * Cada mensaje recibido es evaluado para detectar el tono emocional del usuario (positivo, negativo, neutral, enojado, confundido).
+    * Esto permite futuras implementaciones de atención prioritaria o respuestas empáticas.
 
-PROCESAMIENTO DE VOZ Y RESPUESTA (ASISTENCIA INFORMÁTICA):
+* **🎙️ Procesamiento de Voz (Speech-to-Text)**
+    * Capacidad para recibir notas de voz de Telegram.
+    * Transcribe el audio a texto automáticamente y procesa la consulta informática contenida en él como si fuera texto escrito.
 
-    El bot puede recibir mensajes de voz de Telegram, transcribirlos y, posteriormente, procesar la transcripción como una consulta informática normal, respondiendo según la información contenida en el JSON.
+* **📷 Análisis de Imágenes (Visión Artificial)**
+    * El usuario puede enviar fotos (ej. componentes de hardware, errores en pantalla).
+    * El bot analiza la imagen y ofrece una descripción o solución técnica basada en el contenido visual.
 
-ANÁLISIS DE IMAGEN:
+---
 
-    El bot está habilitado para recibir y procesar imágenes, aunque la funcionalidad específica de esta característica puede ser expandida (ej. descripción de contenido, detección de objetos).
+## 🛠️ **TECNOLOGÍAS UTILIZADAS**
 
-⚙️ ESTRUCTURA DEL REPOSITORIO
-    La organización del proyecto sigue patrones limpios de desarrollo de bots:
+Este proyecto ha sido construido utilizando las siguientes librerías y herramientas:
 
-/src: Contiene los módulos principales de Python, incluyendo la lógica del dispatcher de Telegram y las funciones de manejo de handlers.
+* **`pyTelegramBotAPI` (Telebot):** Para la interacción con la API de Telegram.
+* **`Requests`:** Para el manejo de peticiones HTTP a la API de Groq.
+* **`Groq Cloud API`:** Motor de inteligencia artificial (Modelos Llama-3).
+* **`JSON`:** Estructura de datos para el conocimiento base.
+* **`OS / IO`:** Manejo de archivos del sistema.
 
-/data: Directorio esencial. Aquí se aloja el archivo knowledge_base.json, la base de conocimiento que alimenta las respuestas del bot.
+---
 
-/assets: Usado para almacenar cualquier recurso estático necesario (imágenes de ejemplo, modelos, etc.).
+## ⚙️ **INSTALACIÓN Y CONFIGURACIÓN**
 
-requirements.txt: Lista de dependencias de Python necesarias para la ejecución.
+Sigue estos pasos para ejecutar el bot en tu entorno local:
 
-🚀 GUÍA DE PUESTA EN MARCHA (SETUP)
-    Sigue estos pasos para desplegar y probar el bot en tu entorno local.
+### **1. Clonar el Repositorio**
 
-1. CLONAR EL REPOSITORIO
-    Abre tu terminal y ejecuta:
-
-Bash
-
-git clone https://github.com/leanr264/proyectofinal-bot.git
+```bash
+git clone [https://github.com/leanr264/proyectofinal-bot.git](https://github.com/leanr264/proyectofinal-bot.git)
 cd proyectofinal-bot
-2. CONFIGURACIÓN DEL ENTORNO
-    Se recomienda usar un entorno virtual para aislar las dependencias:
 
-Bash
+2. Crear Entorno Virtual (Recomendado)
 
 python -m venv venv
-source venv/bin/activate  # En Linux/macOS
-# o .\venv\Scripts\activate en Windows
-3. INSTALAR DEPENDENCIAS
-    Instala todas las librerías necesarias:
+# En Windows:
+venv\Scripts\activate
+# En Linux/Mac:
+source venv/bin/activate
 
+¡Excelente iniciativa! Un README.md profesional es la carta de presentación de tu código. Si alguien entra a tu repositorio y ve un documento limpio, estructurado y claro, asumirá inmediatamente que el código tiene la misma calidad.
+
+Basándome en tu código actual (el uso de Groq, la lógica del JSON y Telebot) y las funcionalidades que mencionaste (audio, imagen, sentimientos), he redactado este documento.
+
+Copia y pega el siguiente bloque de código en tu archivo README.md.
+
+Markdown
+
+# 🤖 **TELEGRAM INFOBOT: ASISTENTE DE INTELIGENCIA ARTIFICIAL**
+
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-Bot-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)
+![Groq](https://img.shields.io/badge/AI-Groq-orange?style=for-the-badge)
+
+> Un asistente virtual avanzado diseñado para responder consultas informáticas de manera precisa, restringida y segura, integrando capacidades multimodales (Texto, Voz e Imagen).
+
+---
+
+## 📋 **DESCRIPCIÓN DEL PROYECTO**
+
+Este proyecto consiste en un **ChatBot para Telegram** desarrollado en Python. Su núcleo es un sistema de **Generación Aumentada por Recuperación (RAG)** simplificado, que utiliza la potencia de los LLMs (vía Groq API) pero restringe estrictamente el conocimiento a un dataset local (`datainformática.json`).
+
+El objetivo es ofrecer un asistente educativo o de soporte técnico que **no alucine** información, sino que interprete y exponga datos verídicos previamente curados, además de analizar el contexto emocional del usuario.
+
+---
+
+## 🚀 **CARACTERÍSTICAS PRINCIPALES**
+
+El bot cuenta con cuatro módulos fundamentales de interacción:
+
+* **💬 Respuestas Basadas en Dataset (RAG Estricto)**
+    * El bot lee un archivo JSON local con información técnica.
+    * Utiliza un *System Prompt* avanzado para instruir a la IA (Llama-3 via Groq) a responder **únicamente** con la información de ese archivo.
+    * Si la pregunta está fuera del alcance del dataset, el bot declina amablemente la respuesta.
+
+* **🎭 Análisis de Sentimientos**
+    * Cada mensaje recibido es evaluado para detectar el tono emocional del usuario (positivo, negativo, neutral, enojado, confundido).
+    * Esto permite futuras implementaciones de atención prioritaria o respuestas empáticas.
+
+* **🎙️ Procesamiento de Voz (Speech-to-Text)**
+    * Capacidad para recibir notas de voz de Telegram.
+    * Transcribe el audio a texto automáticamente y procesa la consulta informática contenida en él como si fuera texto escrito.
+
+* **📷 Análisis de Imágenes (Visión Artificial)**
+    * El usuario puede enviar fotos (ej. componentes de hardware, errores en pantalla).
+    * El bot analiza la imagen y ofrece una descripción o solución técnica basada en el contenido visual.
+
+---
+
+## 🛠️ **TECNOLOGÍAS UTILIZADAS**
+
+Este proyecto ha sido construido utilizando las siguientes librerías y herramientas:
+
+* **`pyTelegramBotAPI` (Telebot):** Para la interacción con la API de Telegram.
+* **`Requests`:** Para el manejo de peticiones HTTP a la API de Groq.
+* **`Groq Cloud API`:** Motor de inteligencia artificial (Modelos Llama-3).
+* **`JSON`:** Estructura de datos para el conocimiento base.
+* **`OS / IO`:** Manejo de archivos del sistema.
+
+---
+
+## ⚙️ **INSTALACIÓN Y CONFIGURACIÓN**
+
+Sigue estos pasos para ejecutar el bot en tu entorno local:
+
+### **1. Clonar el Repositorio**
+
+```bash
+git clone [https://github.com/leanr264/proyectofinal-bot.git](https://github.com/leanr264/proyectofinal-bot.git)
+cd proyectofinal-bot
+2. Crear Entorno Virtual (Recomendado)
 Bash
 
-pip install -r requirements.txt
-4. CONFIGURACIÓN DE CREDENCIALES Y BASES DE DATOS
-    Este paso es crítico. Debes proporcionar el token de Telegram Bot y cualquier otra clave de API requerida (ej. para análisis de voz/imagen si usas servicios externos).
+¡Excelente iniciativa! Un README.md profesional es la carta de presentación de tu código. Si alguien entra a tu repositorio y ve un documento limpio, estructurado y claro, asumirá inmediatamente que el código tiene la misma calidad.
 
-    Crea un archivo llamado .env en la raíz del proyecto.
+Basándome en tu código actual (el uso de Groq, la lógica del JSON y Telebot) y las funcionalidades que mencionaste (audio, imagen, sentimientos), he redactado este documento.
 
-    Añade la siguiente variable, reemplazando el valor por tu token real:
+Copia y pega el siguiente bloque de código en tu archivo README.md.
 
-TELEGRAM_BOT_TOKEN="TU_TOKEN_DE_TELEGRAM_AQUI"
-5. POBLAR LA BASE DE CONOCIMIENTO
-    Asegúrate de que el archivo data/knowledge_base.json esté correctamente estructurado con las preguntas clave y sus respectivas respuestas informáticas.
+Markdown
 
-6. EJECUTAR EL BOT
-    Una vez configurado, ejecuta el script principal:
+# 🤖 **TELEGRAM INFOBOT: ASISTENTE DE INTELIGENCIA ARTIFICIAL**
 
-Bash
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-Bot-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)
+![Groq](https://img.shields.io/badge/AI-Groq-orange?style=for-the-badge)
 
-python run_bot.py 
-# (Asumiendo que el punto de entrada principal del bot se llama run_bot.py)
-    Tu bot estará ahora activo y listo para recibir mensajes en Telegram.
-    
+> Un asistente virtual avanzado diseñado para responder consultas informáticas de manera precisa, restringida y segura, integrando capacidades multimodales (Texto, Voz e Imagen).
 
-  
+---
+
+## 📋 **DESCRIPCIÓN DEL PROYECTO**
+
+Este proyecto consiste en un **ChatBot para Telegram** desarrollado en Python. Su núcleo es un sistema de **Generación Aumentada por Recuperación (RAG)** simplificado, que utiliza la potencia de los LLMs (vía Groq API) pero restringe estrictamente el conocimiento a un dataset local (`datainformática.json`).
+
+El objetivo es ofrecer un asistente educativo o de soporte técnico que **no alucine** información, sino que interprete y exponga datos verídicos previamente curados, además de analizar el contexto emocional del usuario.
+
+---
+
+## 🚀 **CARACTERÍSTICAS PRINCIPALES**
+
+El bot cuenta con cuatro módulos fundamentales de interacción:
+
+* **💬 Respuestas Basadas en Dataset (RAG Estricto)**
+    * El bot lee un archivo JSON local con información técnica.
+    * Utiliza un *System Prompt* avanzado para instruir a la IA (Llama-3 via Groq) a responder **únicamente** con la información de ese archivo.
+    * Si la pregunta está fuera del alcance del dataset, el bot declina amablemente la respuesta.
+
+* **🎭 Análisis de Sentimientos**
+    * Cada mensaje recibido es evaluado para detectar el tono emocional del usuario (positivo, negativo, neutral, enojado, confundido).
+    * Esto permite futuras implementaciones de atención prioritaria o respuestas empáticas.
+
+* **🎙️ Procesamiento de Voz (Speech-to-Text)**
+    * Capacidad para recibir notas de voz de Telegram.
+    * Transcribe el audio a texto automáticamente y procesa la consulta informática contenida en él como si fuera texto escrito.
+
+* **📷 Análisis de Imágenes (Visión Artificial)**
+    * El usuario puede enviar fotos (ej. componentes de hardware, errores en pantalla).
+    * El bot analiza la imagen y ofrece una descripción o solución técnica basada en el contenido visual.
+
+---
+
+## 🛠️ **TECNOLOGÍAS UTILIZADAS**
+
+Este proyecto ha sido construido utilizando las siguientes librerías y herramientas:
+
+* **`pyTelegramBotAPI` (Telebot):** Para la interacción con la API de Telegram.
+* **`Requests`:** Para el manejo de peticiones HTTP a la API de Groq.
+* **`Groq Cloud API`:** Motor de inteligencia artificial (Modelos Llama-3).
+* **`JSON`:** Estructura de datos para el conocimiento base.
+* **`OS / IO`:** Manejo de archivos del sistema.
+
+---
+
+## ⚙️ **INSTALACIÓN Y CONFIGURACIÓN**
+
+Sigue estos pasos para ejecutar el bot en tu entorno local:
+
+### **1. Clonar el Repositorio**
+
+```bash
+git clone [https://github.com/leanr264/proyectofinal-bot.git](https://github.com/leanr264/proyectofinal-bot.git)
+cd proyectofinal-bot
+2. Crear Entorno Virtual (Recomendado)
+
+pip install pyTelegramBotAPI requests
+# (Instalar otras librerías necesarias para audio/imagen si aplica, ej: SpeechRecognition, Pillow)
+
+3. Instalar Dependencias
+
+pip install pyTelegramBotAPI requests
+# (Instalar otras librerías necesarias para audio/imagen si aplica, ej: SpeechRecognition, Pillow)
+
+4. Configuración de Variables
+Asegúrate de tener tus claves de API listas. Debes configurar las siguientes constantes en tu archivo principal o, preferiblemente, en variables de entorno:
+
+TELEGRAM_TOKEN: Tu token proporcionado por @BotFather.
+
+GROQ_API_KEY: Tu clave API de la plataforma Groq.
+
+PATH_DATASET: La ruta a tu archivo datainformática.json.
+
+📖 MODO DE USO
+Una vez que el bot esté corriendo (python Bot_telegram.py), puedes interactuar con él de las siguientes formas:
+
+Comando /start: Inicia la conversación y recibe el mensaje de bienvenida.
+
+Consultas de Texto:
+
+Usuario: "¿Qué es un procesador?" Bot: (Busca en el JSON y genera una respuesta explicativa).
+
+Consultas de Voz: Envía un audio preguntando "¿Cuál es la diferencia entre RAM y ROM?".
+
+Consultas de Imagen: Envía una foto de un componente para que el bot intente identificarlo o explicarlo.
+
+📂 ESTRUCTURA DEL PROYECTO
+
+proyectofinal-bot/
+├── Bot_telegram.py       # Script principal (Entry point)
+├── ManejadorDeTexto.py   # Clase lógica (Conexión Groq + Dataset)
+├── datainformática.json  # Base de conocimiento (Dataset)
+├── .gitignore            # Archivos ignorados por Git
+└── README.md             # Documentación
+
 
 
 
