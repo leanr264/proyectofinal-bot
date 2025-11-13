@@ -107,9 +107,11 @@ Consultas de Imagen: Envía una foto de un componente para que el bot intente id
 
 📂 ESTRUCTURA DEL PROYECTO
 
+```text
 proyectofinal-bot/
 ├── Bot_telegram.py       # Script principal (Entry point)
 ├── ManejadorDeTexto.py   # Clase lógica (Conexión Groq + Dataset)
 ├── datainformática.json  # Base de conocimiento (Dataset)
 ├── .gitignore            # Archivos ignorados por Git
 └── README.md             # Documentación
+```
