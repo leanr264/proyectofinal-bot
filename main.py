@@ -1,3 +1,5 @@
+
+from Sentimentanalyzer import AnalizadorSentimiento
 import telebot as tlb
 import requests
 import json
@@ -34,6 +36,12 @@ def welcome(mensaje):
 @bot._bot.message_handler(content_types=['photo'])
 def manejar_imagen(mensaje):
     bot.definir_entrada(groq_client, mensaje)
+
+
+# Comando especifico para el bot de analisis de sentimiento
+@bot._bot.message_handler(commands=["analizar"])
+def analizar_sentimiento(message):
+    bot.definir_entrada(groq_client, message)
 
 
 if __name__ == "__main__":

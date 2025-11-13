@@ -1,5 +1,6 @@
 import telebot as tlb
 from image_handler import ImageHandler
+from Sentimentanalyzer import AnalizadorSentimiento
 
 
 class TelegramBot:
@@ -25,6 +26,8 @@ class TelegramBot:
     def definir_entrada(self, groq, mensaje):
         if mensaje.photo:
             handler = ImageHandler(groq)
+        elif mensaje.text:
+            handler = AnalizadorSentimiento()
 
         respuesta = handler.procesar_entrada(self._bot, mensaje)
         self._bot.send_message(mensaje.chat.id, respuesta)
