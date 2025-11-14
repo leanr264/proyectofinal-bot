@@ -1,11 +1,5 @@
-import telebot as tlb
-import requests
-import json
 import os
-from transformers import pipeline
 from groq import Groq
-from typing import Optional
-import time
 from dotenv import load_dotenv
 from telegram_bot import TelegramBot
 
@@ -33,12 +27,12 @@ def welcome(mensaje):
 
 
 @bot._bot.message_handler(content_types=['photo'])
-def manejar_imagen(mensaje):
+def interpretar_imagen(mensaje):
     bot.definir_entrada(groq_client, mensaje)
 
 
 # Comando especifico para el bot de analisis de sentimiento
-@bot._bot.message_handler(commands=["analizar"])
+@bot._bot.message_handler(commands=["analizar"], content_types=['text'])
 def analizar_sentimiento(message):
     bot.definir_entrada(groq_client, message)
 
