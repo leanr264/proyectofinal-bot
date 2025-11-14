@@ -18,8 +18,8 @@ class TelegramBot:
         welcome_message = (
             "**👋 ¡Bienvenido al ChatBot CodexDebug!**\n\n"
             "Puedo ayudarte con:\n"
-            "1. **Consultas Informaticas**.\n"
-            "2. **Análisis de Sentimientos** (envía un mensaje).\n"
+            "1. **Consultas Informaticas**. (envía un texto)\n"
+            "2. **Análisis de Sentimientos** (envía un texto con el comando /analizar al principio).\n"
             "3. **Transcripción de Voz** (envía una nota de voz).\n"
             "4. **Interpretación de Imágenes** (envía una foto)."
         )
@@ -29,13 +29,15 @@ class TelegramBot:
         if mensaje.photo:
             handler = ImageHandler(groq)
         elif mensaje.text:
-            # handler = AnalizadorSentimiento()
-            handler = ManejadorDeTexto(groq)
+            texto = mensaje.text.strip()
+
+            if texto.startswith('/analizar'):
+                handler = AnalizadorSentimiento()
+            else:
+                handler = ManejadorDeTexto(groq)
+
         elif mensaje.voice:
             handler = ManejadorDeAudio(groq)
 
         respuesta = handler.procesar_entrada(self._bot, mensaje)
         self._bot.reply_to(mensaje, respuesta)
-
-    def send_response(self, respuesta):
-        return
