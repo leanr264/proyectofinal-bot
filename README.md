@@ -63,37 +63,40 @@ git clone [https://github.com/leanr264/proyectofinal-bot.git](https://github.com
 cd proyectofinal-bot
 ```
 
-2- Crear entorno virtual (RECOMENDADO)
+### **2. Crear entorno virtual (RECOMENDADO)**
 
 ```bash
 python -m venv venv
 ```
 
-# En Windows:
+# Activar entorno virtual
 
 ```bash
+En Windows:
 venv\Scripts\activate
 # En Linux/Mac:
 source venv/bin/activate
 ```
-3-Instalar Dependencias
+### **3. Instalar Dependencias**
 
 ```bash
-pip install pyTelegramBotAPI requests
-# (Instalar otras librerías necesarias para audio/imagen si aplica, ej: SpeechRecognition, Pillow)
+pip install -r requirements.txt (todas las dependencias necesarias estan en ese archivo)
 ```
 
-4. Configuración de Variables
-Asegúrate de tener tus claves de API listas. Debes configurar las siguientes constantes en tu archivo principal o, preferiblemente, en variables de entorno:
+### **4. Configuración de Variables**
 
-TELEGRAM_TOKEN: Tu token proporcionado por @BotFather.
+Asegúrate de tener tus claves de API listas. Las variables deben definirse en un archivo .env, siguiendo el formato provisto en el archivo .env.example incluido en este repositorio.
 
-GROQ_API_KEY: Tu clave API de la plataforma Groq.
+Debes completar las siguientes variables en tu archivo .env:
 
-PATH_DATASET: La ruta a tu archivo datainformática.json.
+TELEGRAM_TOKEN: Token proporcionado por @BotFather.
 
-📖 MODO DE USO
-Una vez que el bot esté corriendo (python Bot_telegram.py), puedes interactuar con él de las siguientes formas:
+GROQ_API_KEY: Clave API de la plataforma Groq.
+
+PATH_DATASET: Ruta al archivo datainformatica.json.
+
+### **📖 MODO DE USO**
+Una vez que el bot esté corriendo (python main.py), puedes interactuar con él de las siguientes formas:
 
 Comando /start: Inicia la conversación y recibe el mensaje de bienvenida.
 
@@ -101,18 +104,27 @@ Consultas de Texto:
 
 Usuario: "¿Qué es un procesador?" Bot: (Busca en el JSON y genera una respuesta explicativa).
 
+Consultas de analisis de sentimientos: 
+
+Usuario: /analizar mi código no funciona Bot: (Muestra el resultado de Sentimiento: POS, NEG o NEU y la Confianza: porcentaje de probabilidad de que el sentimiento sea correcto) 
+
 Consultas de Voz: Envía un audio preguntando "¿Cuál es la diferencia entre RAM y ROM?".
 
 Consultas de Imagen: Envía una foto de un componente para que el bot intente identificarlo o explicarlo.
 
-📂 ESTRUCTURA DEL PROYECTO
+### **📂 ESTRUCTURA DEL PROYECTO**
 
 ```text
 proyectofinal-bot/
-├── Bot_telegram.py       # Script principal (Entry point)
-├── ManejadorDeTexto.py   # Clase lógica (Conexión Groq + Dataset)
+├── main.py   # Script principal (Entry point)
+├── telegram_bot.py       # Clase que contiene la lógica del Bot
+├── image_handler.py       # Clase del interpretador de imagenes
+├── manejador_texto.py   # Clase del manejador de texto
+├── manejador_audio.py   # Clase del transcriptor de audio
+├── message_handler.py   # Clase base de manejadores (los manejadores heredan de ella)
 ├── datainformática.json  # Base de conocimiento (Dataset)
 ├── .gitignore            # Archivos ignorados por Git
 └── README.md             # Documentación
-└──Sentimentanalyzer.py   #Script del analizador de sentimientos
+└──Sentimentanalyzer.py   #Clase del analizador de sentimientos
+└── .env.example             # Acá hay un ejemplo de como tiene que ser el archivo .env para poner las claves
 ```
